@@ -1,0 +1,116 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+#root {
+  padding: 30px;
+  font-family: "Open Sans", sans-serif;
+  max-width: 600px;
+}
+
+#timePicker,
+#datePicker {
+  max-width: 48%;
+}
+#datePicker {
+  margin-right: 4%;
+}
+
+nav > a {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.3em;
+  color: #000000;
+  margin-right: 30.5px;
+  text-decoration-line: none;
+}
+
+nav > a.active {
+  text-decoration-line: underline;
+}
+
+nav {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #979797;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 18px;
+  color: #000000;
+  margin: 0;
+  margin-bottom: 18px;
+}
+
+section {
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #979797;
+  margin: 20px 0;
+}
+
+input[type="submit"] {
+  background: #03a8d8;
+  border-radius: 4px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  padding: 10px 0;
+  width: 100%;
+  font-family: "Open Sans", sans-serif;
+  margin-top: 15px;
+  margin-bottom: 0px;
+}
+
+input,
+select {
+  font-family: "Open Sans", sans-serif;
+  background: #ffffff;
+  border: 1px solid #979797;
+  border-radius: 4px;
+  padding: 7px 9.5px 9px 9.5px;
+  outline: none;
+  width: 100%;
+  min-height: 40px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.tile {
+  margin: 0;
+  font-size: 14px;
+  margin-bottom: 4px;
+  min-height: 14px;
+}
+
+.tile-title {
+  font-weight: bold;
+  margin: 5px 0px;
+  min-height: 38px;
+}
+
+.tile-container {
+  padding: 5px;
+
+  min-height: 100px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.tileList {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(160px, 1fr));
+  gap: 5px;
+}
+
+.fa-trash-o {
+  position: relative;
+  float: right;
+  color: darkgray;
+  cursor: pointer;
+}
