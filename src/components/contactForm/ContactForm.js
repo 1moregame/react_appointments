@@ -43,7 +43,7 @@ export const ContactForm = ({
         placeholder="Email"
         onChange={emailChange}
       />
-      <button>Add Contact</button>
+      <input type="submit" value="Add Contact" />
     </form>
   );
 };
