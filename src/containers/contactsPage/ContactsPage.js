@@ -27,7 +27,10 @@ export const ContactsPage = ({ contacts, addContact, setContacts }) => {
   */
   useEffect(() => {
     setDuplicate(
-      contacts.filter((contact) => contact.name === name).length > 0
+      contacts.filter(
+        (contact) =>
+          contact.name.trim().toLowerCase() === name.trim().toLowerCase()
+      ).length > 0
     );
   }, [name, contacts]);
 
