@@ -31,7 +31,11 @@ export const AppointmentForm = ({
       <label htmlFor="contactPicker" aria-label="Appointment With" hidden>
         Appointment With
       </label>
-      <ContactPicker contacts={contacts} handleChange={handleChange} />
+      <ContactPicker
+        contact={contact}
+        contacts={contacts}
+        handleChange={handleChange}
+      />
       <label htmlFor="date" aria-label="date" hidden>
         Date
       </label>

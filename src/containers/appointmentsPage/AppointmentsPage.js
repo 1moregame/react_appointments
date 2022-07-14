@@ -24,7 +24,6 @@ export const AppointmentsPage = ({
     addAppointment({ title: title, contact: contact, date: date, time: time });
     setTitle("");
     setContact("");
-    document.getElementById("contactPicker").value = "None"; //wonder if there is a better way?
     setDate(getTodayString());
     setTime(currentTime());
   };
