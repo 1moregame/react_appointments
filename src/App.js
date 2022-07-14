@@ -14,7 +14,7 @@ function App() {
   ]);
 
   const addContact = ({ name, phone, email }) => {
-    const newContact = { name: name, phone: phone, email: email };
+    const newContact = { name, phone, email };
     setContacts((prev) => {
       return [...prev, newContact];
     });

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import React from "react";
 import { ContactForm } from "../../components/contactForm/ContactForm";
 import { TileList } from "../../components/tileList/TileList";
@@ -6,13 +6,16 @@ export const ContactsPage = ({ contacts, addContact, setContacts }) => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
+  const [duplicate, setDuplicate] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (isDuplicate()) return;
+    if (duplicate) {
+      return;
+    }
 
-    addContact({ name: name, phone: phone, email: email });
+    addContact({ name, phone, email });
     setName("");
     setPhone("");
     setEmail("");
@@ -22,15 +25,15 @@ export const ContactsPage = ({ contacts, addContact, setContacts }) => {
   Using hooks, check for contact name in the 
   contacts array variable in props
   */
-  const isDuplicate = () => {
-    let duplicate =
-      contacts.filter((contact) => contact.name === name).length > 0;
+  useEffect(() => {
+    setDuplicate(
+      contacts.filter((contact) => contact.name === name).length > 0
+    );
+  }, [name, contacts]);
 
-    return duplicate;
-  };
   const handleDelete = ({ target }) => {
     let revisedContacts = contacts.filter(
-      (contact, index) => target.id !== index.toString()
+      (_, index) => target.id !== index.toString()
     );
     setContacts(revisedContacts);
   };
@@ -41,11 +44,12 @@ export const ContactsPage = ({ contacts, addContact, setContacts }) => {
         <h2>Add Contact</h2>
         <ContactForm
           name={name}
-          setName={(value) => setName(value)}
+          setName={setName}
           phone={phone}
-          setPhone={(value) => setPhone(value)}
+          setPhone={setPhone}
           email={email}
-          setEmail={(value) => setEmail(value)}
+          setEmail={setEmail}
+          duplicate={duplicate}
           handleSubmit={handleSubmit}
         />
       </section>

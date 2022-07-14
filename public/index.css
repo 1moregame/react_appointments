@@ -6,6 +6,7 @@ body {
   padding: 30px;
   font-family: "Open Sans", sans-serif;
   max-width: 600px;
+  box-sizing: border-box;
 }
 
 #timePicker,
@@ -113,4 +114,13 @@ select {
   float: right;
   color: darkgray;
   cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.duplicate {
+  color: red;
+  display: inline;
 }

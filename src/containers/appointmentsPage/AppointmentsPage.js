@@ -21,7 +21,7 @@ export const AppointmentsPage = ({
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    addAppointment({ title: title, contact: contact, date: date, time: time });
+    addAppointment({ title, contact, date, time });
     setTitle("");
     setContact("");
     setDate(getTodayString());

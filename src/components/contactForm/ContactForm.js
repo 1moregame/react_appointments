@@ -7,6 +7,7 @@ export const ContactForm = ({
   setPhone,
   email,
   setEmail,
+  duplicate,
   handleSubmit,
 }) => {
   const nameChange = ({ target }) => {
@@ -21,12 +22,23 @@ export const ContactForm = ({
 
   return (
     <form onSubmit={handleSubmit}>
+      <label
+        htmlFor="name"
+        aria-label="Contact Name"
+        className={duplicate ? "duplicate" : "hidden"}
+      >
+        Contact Name Must Be Unique
+      </label>
       <input
         type="text"
         name="name"
         value={name}
         placeholder="Name"
         onChange={nameChange}
+      />
+      <label
+        htmlFor="phone"
+        aria-label="Contact telephone number ###-###-####"
       />
       <input
         type="tel"
@@ -36,6 +48,7 @@ export const ContactForm = ({
         pattern="^\D?(\d?)\D?(\d{3})\D?\D?(\d{3})\D?(\d{4})$"
         onChange={phoneChange}
       />
+      <label htmlFor="email" aria-label="Contact email address" />
       <input
         type="email"
         name="email"
